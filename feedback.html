@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+</head>
+
+<style>
+    @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+body { background:rgb(30,30,40); }
+form { max-width:420px; margin:50px auto; }
+#title { 
+    color:white;
+    font-size:80px;
+    text-align:center;
+}
+.feedback-input {
+  color:white;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight:500;
+  font-size: 18px;
+  border-radius: 5px;
+  line-height: 22px;
+  background-color: transparent;
+  border:2px solid #00b894;
+  transition: all 0.3s;
+  padding: 13px;
+  margin-bottom: 15px;
+  width:100%;
+  box-sizing: border-box;
+  outline:0;
+}
+
+.feedback-input:focus { border:2px solid #0e6755; }
+
+textarea {
+  height: 150px;
+  line-height: 150%;
+  resize:vertical;
+}
+
+[type="submit"] {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  width: 100%;
+  background:#00b894;
+  border-radius:5px;
+  border:0;
+  cursor:pointer;
+  color:white;
+  font-size:24px;
+  padding-top:10px;
+  padding-bottom:10px;
+  transition: all 0.3s;
+  margin-top:-4px;
+  font-weight:700;
+}
+[type="submit"]:hover { background:#048d71; }
+.rating {
+  display: inline-block;
+  position: relative;
+  height: 50px;
+  line-height: 50px;
+  font-size: 50px;
+}
+
+.rating label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  cursor: pointer;
+}
+
+.rating label:last-child {
+  position: static;
+}
+
+.rating label:nth-child(1) {
+  z-index: 5;
+}
+
+.rating label:nth-child(2) {
+  z-index: 4;
+}
+
+.rating label:nth-child(3) {
+  z-index: 3;
+}
+
+.rating label:nth-child(4) {
+  z-index: 2;
+}
+
+.rating label:nth-child(5) {
+  z-index: 1;
+}
+
+.rating label input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.rating label .icon {
+  float: left;
+  color: transparent;
+}
+
+.rating label:last-child .icon {
+  color: #000;
+}
+
+.rating:not(:hover) label input:checked ~ .icon,
+.rating:hover label:hover input ~ .icon {
+  color:rgb(218, 218, 67);
+}
+
+.rating label input:focus:not(:checked) ~ .icon:last-child {
+  color: #000;
+  text-shadow: 0 0 5px rgb(218, 218, 67);
+}
+</style>
+<body>
+    <h1 id="title">Feedback!</h1>
+    <form> 
+        <h1 style="color:grey;">Rate your overall expirience:</h1>
+        <div class="rating">
+        
+        <label>
+            <input type="radio" name="stars" value="1" />
+            <span class="icon">★</span>
+          </label>
+          <label>
+            <input type="radio" name="stars" value="2" />
+            <span class="icon">★</span>
+            <span class="icon">★</span>
+          </label>
+          <label>
+            <input type="radio" name="stars" value="3" />
+            <span class="icon">★</span>
+            <span class="icon">★</span>
+            <span class="icon">★</span>   
+          </label>
+          <label>
+            <input type="radio" name="stars" value="4" />
+            <span class="icon">★</span>
+            <span class="icon">★</span>
+            <span class="icon">★</span>
+            <span class="icon">★</span>
+          </label>
+          <label>
+            <input type="radio" name="stars" value="5" />
+            <span class="icon">★</span>
+            <span class="icon">★</span>
+            <span class="icon">★</span>
+            <span class="icon">★</span>
+            <span class="icon">★</span>
+          </label>  
+          </div> 
+          <br><br>
+  <input name="name" type="text" class="feedback-input" placeholder="Full Name" />   
+  <input name="email" type="text" class="feedback-input" placeholder="Email" />
+  <textarea name="text" class="feedback-input" placeholder="Comments/Suggestions"></textarea>
+  <input type="submit" value="SUBMIT"/>
+</form>
+
+
+    
+</body>
+</html>
